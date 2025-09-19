@@ -1,0 +1,30 @@
+---
+import type { Time } from "../../types/time";
+import IconYoutube from "../icons/IconYoutube.astro";
+
+interface Props extends Time {
+  Icon?: any;
+}
+
+const { time, date, youtube, wca, Icon } = Astro.props as Props;
+---
+
+<div
+  class="px-14 py-6 flex flex-col items-center bg-primary-200/30 rounded-2xl relative duration-300 hover:shadow-primary-600 shadow-xl hover:rotate-3"
+>
+  {
+    Icon && (
+      <div class="mb-2">
+        <Icon size={90} lightColor="white" />
+      </div>
+    )
+  }
+
+  <p class="text-xl">Single</p>
+  <p class="text-6xl font-bold">{time}</p>
+  <p>{date}</p>
+
+  <div class="absolute bottom-3 right-5">
+    <IconYoutube size={30} lightColor="white" href={youtube} target="_blank" />
+  </div>
+</div>

@@ -1,0 +1,16 @@
+---
+import type { Time } from "../../types/time";
+import IconYoutube from "../icons/IconYoutube.astro";
+
+interface Props {
+  time: string;
+  date: string;
+}
+
+const { time, date } = Astro.props as Props;
+---
+
+<div class="flex justify-between items-center relative">
+  <p class="text-lg italic">{date}</p>
+  <p class="text-xl">{time}</p>
+</div>

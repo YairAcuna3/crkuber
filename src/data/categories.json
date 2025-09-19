@@ -1,0 +1,121 @@
+[
+  {
+    "slug": "2x2",
+    "title": "2x2 Cube",
+    "description": "All the history of personal best in 2x2",
+    "icon": "Icon2",
+    "dataFolder": "../data/2x2"
+  },
+  {
+    "slug": "3x3",
+    "title": "3x3 Cube",
+    "description": "All the history of personal best in 3x3",
+    "icon": "Icon3",
+    "dataFolder": "../data/3x3"
+  },
+  {
+    "slug": "4x4",
+    "title": "4x4 Cube",
+    "description": "All the history of personal best in 4x4",
+    "icon": "Icon4",
+    "dataFolder": "../data/4x4"
+  },
+  {
+    "slug": "5x5",
+    "title": "5x5 Cube",
+    "description": "All the history of personal best in 5x5",
+    "icon": "Icon5",
+    "dataFolder": "../data/5x5"
+  },
+  {
+    "slug": "6x6",
+    "title": "6x6 Cube",
+    "description": "All the history of personal best in 6x6",
+    "icon": "Icon6",
+    "dataFolder": "../data/6x6"
+  },
+  {
+    "slug": "7x7",
+    "title": "7x7 Cube",
+    "description": "All the history of personal best in 7x7",
+    "icon": "Icon7",
+    "dataFolder": "../data/7x7"
+  },
+  {
+    "slug": "3bld",
+    "title": "Blindfoolded 3x3",
+    "description": "All the history of personal best in blindfoolded 3x3 cube",
+    "icon": "IconBld3",
+    "dataFolder": "../data/bld3"
+  },
+  {
+    "slug": "4bld",
+    "title": "Blindfoolded 4x4",
+    "description": "All the history of personal best in blindfoolded 4x4 cube",
+    "icon": "IconBld4",
+    "dataFolder": "../data/bld4"
+  },
+  {
+    "slug": "5bld",
+    "title": "Blindfoolded 5x5",
+    "description": "All the history of personal best in blindfoolded 5x5 cube",
+    "icon": "IconBld5",
+    "dataFolder": "../data/bld5"
+  },
+  {
+    "slug": "mbld",
+    "title": "Multi blindfoolded",
+    "description": "All the history of personal best in multi-blind",
+    "icon": "IconMbld",
+    "dataFolder": "../data/mbld"
+  },
+  {
+    "slug": "pyra",
+    "title": "Pyraminx Cube",
+    "description": "All the history of personal best in Pyraminx",
+    "icon": "IconPyraminx",
+    "dataFolder": "../data/pyra"
+  },
+  {
+    "slug": "mega",
+    "title": "Megaminx Cube",
+    "description": "All the history of personal best in Megaminx",
+    "icon": "IconMegaminx",
+    "dataFolder": "../data/mega"
+  },
+  {
+    "slug": "fmc",
+    "title": "Fewest Moves Challenge",
+    "description": "All the history of personal best in FMC",
+    "icon": "IconFMC",
+    "dataFolder": "../data/fmc"
+  },
+  {
+    "slug": "oh",
+    "title": "One-Handed",
+    "description": "All the history of personal best in One-Handed 3x3 cube",
+    "icon": "IconOH",
+    "dataFolder": "../data/oh"
+  },
+  {
+    "slug": "sq1",
+    "title": "Square-1 Cube",
+    "description": "All the history of personal best in Square-1 cube",
+    "icon": "IconSquare1",
+    "dataFolder": "../data/sq1"
+  },
+  {
+    "slug": "skewb",
+    "title": "Skewb Cube",
+    "description": "All the history of personal best in Skewb cube",
+    "icon": "IconSkewb",
+    "dataFolder": "../data/skewb"
+  },
+  {
+    "slug": "clock",
+    "title": "Clock",
+    "description": "All the history of personal best in Clock",
+    "icon": "IconClock",
+    "dataFolder": "../data/clock"
+  }
+]

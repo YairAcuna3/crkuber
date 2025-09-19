@@ -1,0 +1,77 @@
+---
+import type { Icon } from "../../../types/icon";
+
+const {
+  size = 24,
+  lightColor = "#000000",
+  darkColor = "#ffffff",
+  className = "",
+  href,
+  target,
+  isDark = false,
+} = Astro.props as Icon;
+---
+
+{
+  href ? (
+    <a href={href} target={target} rel="noopener noreferrer">
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 500 500"
+        xmlns="http://www.w3.org/2000/svg"
+        class={className}
+        fill={isDark ? darkColor : lightColor}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g>
+          <path d="M23.384 20.337h87.088v87.088H23.384z" />
+          <path d="M145.113 20.338h87.089v87.089H145.113z" />
+          <path d="M23.384 144.352h87.088v87.086H23.384z" />
+          <path d="M145.113 144.353h87.089v87.088H145.113z" />
+          <path d="M267.237 20.712h87.088v87.088H267.237z" />
+          <path d="M388.966 20.713h87.090v87.089H388.966z" />
+          <path d="M267.237 144.727h87.088v87.086H267.237z" />
+          <path d="M388.966 144.728h87.090v87.088H388.966z" />
+          <path d="M23.384 268.742h87.088v87.090H23.384z" />
+          <path d="M145.113 268.742h87.089v87.090H145.113z" />
+          <path d="M23.384 392.756h87.088v87.088H23.384z" />
+          <path d="M145.113 392.759h87.089v87.088H145.113z" />
+          <path d="M267.237 268.742h87.088v87.088H267.237z" />
+          <path d="M388.966 268.742h87.090v87.090H388.966z" />
+          <path d="M267.237 392.756h87.088v87.088H267.237z" />
+          <path d="M388.966 392.759h87.090v87.088H388.966z" />
+        </g>
+      </svg>
+    </a>
+  ) : (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      fill={isDark ? darkColor : lightColor}
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g>
+        <path d="M23.384 20.337h87.088v87.088H23.384z" />
+        <path d="M145.113 20.338h87.089v87.089H145.113z" />
+        <path d="M23.384 144.352h87.088v87.086H23.384z" />
+        <path d="M145.113 144.353h87.089v87.088H145.113z" />
+        <path d="M267.237 20.712h87.088v87.088H267.237z" />
+        <path d="M388.966 20.713h87.090v87.089H388.966z" />
+        <path d="M267.237 144.727h87.088v87.086H267.237z" />
+        <path d="M388.966 144.728h87.090v87.088H388.966z" />
+        <path d="M23.384 268.742h87.088v87.090H23.384z" />
+        <path d="M145.113 268.742h87.089v87.090H145.113z" />
+        <path d="M23.384 392.756h87.088v87.088H23.384z" />
+        <path d="M145.113 392.759h87.089v87.088H145.113z" />
+        <path d="M267.237 268.742h87.088v87.088H267.237z" />
+        <path d="M388.966 268.742h87.090v87.090H388.966z" />
+        <path d="M267.237 392.756h87.088v87.088H267.237z" />
+        <path d="M388.966 392.759h87.090v87.088H388.966z" />
+      </g>
+    </svg>
+  )
+}

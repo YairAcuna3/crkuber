@@ -1,0 +1,63 @@
+---
+import type { Icon } from "../../../types/icon";
+
+const {
+  size = 24,
+  lightColor = "#000000",
+  darkColor = "#ffffff",
+  className = "",
+  href,
+  target,
+  isDark = false,
+} = Astro.props as Icon;
+---
+
+{
+  href ? (
+    <a href={href} target={target} rel="noopener noreferrer">
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 500 500"
+        xmlns="http://www.w3.org/2000/svg"
+        class={className}
+        fill={isDark ? darkColor : lightColor}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g>
+          <path d="M29.056 29.492h116.057v116.057H29.056z" />
+          <path d="M191.536 29.492h116.057v116.057H191.536z" />
+          <path d="M354.016 29.492h116.057v116.057H354.016z" />
+          <path d="M29.637 191.971h116.057v116.057H29.637z" />
+          <path d="M192.117 191.971h116.057v116.057H192.117z" />
+          <path d="M354.596 191.971h116.057v116.057H354.596z" />
+          <path d="M29.927 354.451h116.057v116.057H29.927z" />
+          <path d="M192.407 354.451h116.057v116.057H192.407z" />
+          <path d="M354.887 354.451h116.057v116.057H354.887z" />
+        </g>
+      </svg>
+    </a>
+  ) : (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      fill={isDark ? darkColor : lightColor}
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g>
+        <path d="M29.056 29.492h116.057v116.057H29.056z" />
+        <path d="M191.536 29.492h116.057v116.057H191.536z" />
+        <path d="M354.016 29.492h116.057v116.057H354.016z" />
+        <path d="M29.637 191.971h116.057v116.057H29.637z" />
+        <path d="M192.117 191.971h116.057v116.057H192.117z" />
+        <path d="M354.596 191.971h116.057v116.057H354.596z" />
+        <path d="M29.927 354.451h116.057v116.057H29.927z" />
+        <path d="M192.407 354.451h116.057v116.057H192.407z" />
+        <path d="M354.887 354.451h116.057v116.057H354.887z" />
+      </g>
+    </svg>
+  )
+}

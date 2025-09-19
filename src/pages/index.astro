@@ -1,16 +1,47 @@
 ---
-
+import Layout from "../layouts/Layout.astro";
+import { Image } from "astro:assets";
+import yoImg from "../assets/yo.png";
+import IconYoutube from "../components/icons/IconYoutube.astro";
+import BestPanel1 from "../components/main/BestPanel1.astro";
+import BestPanel2 from "../components/main/BestPanel2.astro";
+import BestPanel3 from "@/components/main/BestPanel3.astro";
+import { Icon3 } from "@/components/icons/nxn";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<Layout>
+  <div class="flex flex-col justify-center w-full">
+    <div class="flex justify-center gap-32 w-full">
+      <div class="flex flex-col items-center">
+        <div class="h-140 w-140 mt-20">
+          <Image
+            src={yoImg}
+            alt="Imagen mía"
+            format="png"
+            class="rounded-[140px]"
+          />
+        </div>
+        <a
+          href="https://www.youtube.com/@crkuber5322"
+          target="_blank"
+          class="flex justify-center items-center mt-2 gap-4"
+        >
+          <IconYoutube size={30} lightColor="var(--color-primary-400)" />
+          <p class="italic text-primary-400 font-thin text-2xl">@crkuber5322</p>
+        </a>
+        <div class="flex gap-2 items-center">
+          <p class="text-primary-600 text-xl italic">Main: 8.23s</p>
+          <Icon3 size={20} lightColor="var(--color-primary-600)" />
+        </div>
+      </div>
+      <div>
+        <BestPanel1 />
+      </div>
+    </div>
+
+    <div class="flex justify-center p-20 gap-32">
+      <BestPanel2 />
+      <BestPanel3 />
+    </div>
+  </div>
+</Layout>

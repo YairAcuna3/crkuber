@@ -1,0 +1,53 @@
+---
+import type { Icon } from "../../../types/icon";
+
+const {
+  size = 24,
+  lightColor = "#000000",
+  darkColor = "#ffffff",
+  className = "",
+  href,
+  target,
+  isDark = false,
+} = Astro.props as Icon;
+---
+
+{
+  href ? (
+    <a href={href} target={target} rel="noopener noreferrer">
+      <svg
+        width={size}
+        height={size}
+        viewBox="0 0 500 500"
+        xmlns="http://www.w3.org/2000/svg"
+        class={className}
+        fill={isDark ? darkColor : lightColor}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <g>
+          <path d="M46.822 46.822h173.654v173.654H46.822z" />
+          <path d="M279.524 46.822h173.654v173.654H279.524z" />
+          <path d="M46.822 279.524h173.654v173.654H46.822z" />
+          <path d="M279.524 279.524h173.654v173.654H279.524z" />
+        </g>
+      </svg>
+    </a>
+  ) : (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 500 500"
+      xmlns="http://www.w3.org/2000/svg"
+      class={className}
+      fill={isDark ? darkColor : lightColor}
+      preserveAspectRatio="xMidYMid meet"
+    >
+      <g>
+        <path d="M46.822 46.822h173.654v173.654H46.822z" />
+        <path d="M279.524 46.822h173.654v173.654H279.524z" />
+        <path d="M46.822 279.524h173.654v173.654H46.822z" />
+        <path d="M279.524 279.524h173.654v173.654H279.524z" />
+      </g>
+    </svg>
+  )
+}

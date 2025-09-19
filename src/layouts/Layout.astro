@@ -1,0 +1,23 @@
+---
+import Footer from "../components/Footer.astro";
+import TopMenu from "../components/TopMenu.astro";
+import "../styles/globals.css";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/crk.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>CrKuber</title>
+  </head>
+
+  <body class="flex flex-col min-h-screen">
+    <TopMenu />
+    <main class="flex grow w-full mt-24">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

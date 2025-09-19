@@ -1,0 +1,46 @@
+---
+import type { IconOption } from "@/types/icon";
+
+interface Props {
+  title: string;
+  icons: IconOption[];
+  cols?: string;
+  width?: string;
+  height?: string;
+}
+
+const {
+  title,
+  icons,
+  cols = "grid-cols-3",
+  width = "w-[300px]",
+  height = "h-[180px]",
+} = Astro.props as Props;
+---
+
+<li class="group inset-0">
+  <p
+    class="transform transition-transform duration-300 group-hover:scale-108 text-white group-hover:text-primary-300"
+  >
+    {title} ▾
+  </p>
+  <!-- Div con medidas para que no desaparezca el div -->
+  <div class="absolute h-5 w-15">
+    <div
+      class=`absolute invisible opacity-0 transition-opacity duration-300 group-hover:visible group-hover:opacity-100 top-5 left-1/2 -translate-x-1/2 ${width} ${height} bg-primary-950/50 backdrop-blur-md border-1 border-primary-300/50 rounded-xl`
+    >
+      <div class=`grid ${cols} py-4 gap-y-3 place-items-center`>
+        {
+          icons.map(({ Icon, url }) => (
+            <a
+              href={url}
+              class="transform transition-transform duration-300 hover:scale-115"
+            >
+              <Icon size={65} lightColor="var(--color-primary-400)" />
+            </a>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</li>

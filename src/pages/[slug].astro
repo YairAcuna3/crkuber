@@ -1,0 +1,262 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import LabelHeadTime from "@/components/labels/LabelHeadTime.astro";
+import LabelBodyTimes from "@/components/labels/LabelBodyTimes.astro";
+import categories from "../data/categories.json";
+import type { TimeGroup } from "@/types/time";
+
+import {
+  Icon2,
+  Icon3,
+  Icon4,
+  Icon5,
+  Icon6,
+  Icon7,
+} from "@/components/icons/nxn";
+import {
+  IconBld3,
+  IconBld4,
+  IconBld5,
+  IconMbld,
+} from "@/components/icons/blind";
+import {
+  IconClock,
+  IconFMC,
+  IconOH,
+  IconSkewb,
+  IconSquare1,
+  IconPyraminx,
+  IconMegaminx,
+} from "@/components/icons/other";
+
+import { single2, avg32, avg52, avg122, avg1002 } from "@/data";
+import { single3, avg33, avg53, avg123, avg1003 } from "@/data";
+import { single4, avg34, avg54, avg124, avg1004 } from "@/data";
+import { single5, avg35, avg55, avg125, avg1005 } from "@/data";
+import { single6, avg36, avg56, avg126, avg1006 } from "@/data";
+import { single7, avg37, avg57, avg127, avg1007 } from "@/data";
+
+import { singleB3, avg3B3, avg5B3, avg12B3, avg100B3 } from "@/data";
+import { singleB4, avg3B4, avg5B4, avg12B4, avg100B4 } from "@/data";
+import { singleB5, avg3B5, avg5B5, avg12B5, avg100B5 } from "@/data";
+import { singleMB, avg3MB, avg5MB, avg12MB, avg100MB } from "@/data";
+
+import { singleSk, avg3Sk, avg5Sk, avg12Sk, avg100Sk } from "@/data";
+import { singleSq, avg3Sq, avg5Sq, avg12Sq, avg100Sq } from "@/data";
+import { singlePy, avg3Py, avg5Py, avg12Py, avg100Py } from "@/data";
+import { singleMg, avg3Mg, avg5Mg, avg12Mg, avg100Mg } from "@/data";
+import { singleOH, avg3OH, avg5OH, avg12OH, avg100OH } from "@/data";
+import { singleFmc, avg3Fmc, avg5Fmc, avg12Fmc, avg100Fmc } from "@/data";
+import { singleCl, avg3Cl, avg5Cl, avg12Cl, avg100Cl } from "@/data";
+
+const icons = {
+  Icon2,
+  Icon3,
+  Icon4,
+  Icon5,
+  Icon6,
+  Icon7,
+  IconBld3,
+  IconBld4,
+  IconBld5,
+  IconMbld,
+  IconClock,
+  IconFMC,
+  IconOH,
+  IconSkewb,
+  IconSquare1,
+  IconPyraminx,
+  IconMegaminx,
+};
+
+type IconKey = keyof typeof icons;
+
+const times: Record<string, TimeGroup[]> = {
+  "2x2": [
+    { label: "Single", data: single2 },
+    { label: "Avg3", data: avg32 },
+    { label: "Avg5", data: avg52 },
+    { label: "Avg12", data: avg122 },
+    { label: "Avg100", data: avg1002 },
+  ],
+  "3x3": [
+    { label: "Single", data: single3 },
+    { label: "Avg3", data: avg33 },
+    { label: "Avg5", data: avg53 },
+    { label: "Avg12", data: avg123 },
+    { label: "Avg100", data: avg1003 },
+  ],
+  "4x4": [
+    { label: "Single", data: single4 },
+    { label: "Avg3", data: avg34 },
+    { label: "Avg5", data: avg54 },
+    { label: "Avg12", data: avg124 },
+    { label: "Avg100", data: avg1004 },
+  ],
+  "5x5": [
+    { label: "Single", data: single5 },
+    { label: "Avg3", data: avg35 },
+    { label: "Avg5", data: avg55 },
+    { label: "Avg12", data: avg125 },
+    { label: "Avg100", data: avg1005 },
+  ],
+  "6x6": [
+    { label: "Single", data: single6 },
+    { label: "Avg3", data: avg36 },
+    { label: "Avg5", data: avg56 },
+    { label: "Avg12", data: avg126 },
+    { label: "Avg100", data: avg1006 },
+  ],
+  "7x7": [
+    { label: "Single", data: single7 },
+    { label: "Avg3", data: avg37 },
+    { label: "Avg5", data: avg57 },
+    { label: "Avg12", data: avg127 },
+    { label: "Avg100", data: avg1007 },
+  ],
+  "3bld": [
+    { label: "Single", data: singleB3 },
+    { label: "Avg3", data: avg3B3 },
+    { label: "Avg5", data: avg5B3 },
+    { label: "Avg12", data: avg12B3 },
+    { label: "Avg100", data: avg100B3 },
+  ],
+  "4bld": [
+    { label: "Single", data: singleB4 },
+    { label: "Avg3", data: avg3B4 },
+    { label: "Avg5", data: avg5B4 },
+    { label: "Avg12", data: avg12B4 },
+    { label: "Avg100", data: avg100B4 },
+  ],
+  "5bld": [
+    { label: "Single", data: singleB5 },
+    { label: "Avg3", data: avg3B5 },
+    { label: "Avg5", data: avg5B5 },
+    { label: "Avg12", data: avg12B5 },
+    { label: "Avg100", data: avg100B5 },
+  ],
+  mbld: [
+    { label: "Single", data: singleMB },
+    { label: "Avg3", data: avg3MB },
+    { label: "Avg5", data: avg5MB },
+    { label: "Avg12", data: avg12MB },
+    { label: "Avg100", data: avg100MB },
+  ],
+  mega: [
+    { label: "Single", data: singleMg },
+    { label: "Avg3", data: avg3Mg },
+    { label: "Avg5", data: avg5Mg },
+    { label: "Avg12", data: avg12Mg },
+    { label: "Avg100", data: avg100Mg },
+  ],
+  oh: [
+    { label: "Single", data: singleOH },
+    { label: "Avg3", data: avg3OH },
+    { label: "Avg5", data: avg5OH },
+    { label: "Avg12", data: avg12OH },
+    { label: "Avg100", data: avg100OH },
+  ],
+  skewb: [
+    { label: "Single", data: singleSk },
+    { label: "Avg3", data: avg3Sk },
+    { label: "Avg5", data: avg5Sk },
+    { label: "Avg12", data: avg12Sk },
+    { label: "Avg100", data: avg100Sk },
+  ],
+  sq1: [
+    { label: "Single", data: singleSq },
+    { label: "Avg3", data: avg3Sq },
+    { label: "Avg5", data: avg5Sq },
+    { label: "Avg12", data: avg12Sq },
+    { label: "Avg100", data: avg100Sq },
+  ],
+  pyra: [
+    { label: "Single", data: singlePy },
+    { label: "Avg3", data: avg3Py },
+    { label: "Avg5", data: avg5Py },
+    { label: "Avg12", data: avg12Py },
+    { label: "Avg100", data: avg100Py },
+  ],
+  fmc: [
+    { label: "Single", data: singleFmc },
+    { label: "Avg3", data: avg3Fmc },
+    { label: "Avg5", data: avg5Fmc },
+    { label: "Avg12", data: avg12Fmc },
+    { label: "Avg100", data: avg100Fmc },
+  ],
+  clock: [
+    { label: "Single", data: singleCl },
+    { label: "Avg3", data: avg3Cl },
+    { label: "Avg5", data: avg5Cl },
+    { label: "Avg12", data: avg12Cl },
+    { label: "Avg100", data: avg100Cl },
+  ],
+};
+
+export async function getStaticPaths() {
+  return categories.map((c) => ({
+    params: { slug: c.slug },
+  }));
+}
+
+const { slug } = Astro.params;
+const category = categories.find((g) => g.slug === slug);
+
+if (!slug || !category) {
+  throw new Error(`No category found for slug: ${slug}`);
+}
+
+const Icon = icons[category.icon as IconKey];
+const timeData = times[slug];
+---
+
+<Layout>
+  <main class="flex flex-col items-center w-full">
+    <h1 class="text-primary-300 text-3xl font-bold">{category.title}</h1>
+    <p class="text-primary-800 text-lg">{category.description}</p>
+
+    <div
+      class="mt-6 mb-10 mx-12 transform transition-transform duration-300 hover:scale-105 hover:rotate-1"
+    >
+      <Icon
+        class="w-24 h-24"
+        size={155}
+        lightColor="var(--color-primary-100)"
+      />
+    </div>
+
+    <div class="flex gap-6">
+      {
+        timeData.map((typeSet) => (
+          <div class="w-[280px] transform transition-transform duration-300 hover:scale-105">
+            <LabelHeadTime
+              time={typeSet.data[0].time}
+              date={typeSet.data[0].date}
+              youtube={typeSet.data[0].youtube}
+              wca={typeSet.data[0].wca}
+              typeSet={typeSet.label}
+            />
+          </div>
+        ))
+      }
+    </div>
+
+    <div class="flex gap-6 mt-2">
+      {
+        timeData.map((typeSet) =>
+          typeSet.data.length > 1 ? (
+            <div class="flex flex-col items-center w-[280px] py-6 px-8 gap-2 bg-primary-200/30 rounded-2xl relative blur-xs hover:blur-none transform transition-transform duration-300 scale-90 hover:scale-100 -translate-y-5 hover:translate-y-1">
+              {typeSet.data.slice(1).map((item) => (
+                <div class="flex flex-col w-full">
+                  <LabelBodyTimes time={item.time} date={item.date} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div class="w-[280px]" />
+          )
+        )
+      }
+    </div>
+  </main>
+</Layout>

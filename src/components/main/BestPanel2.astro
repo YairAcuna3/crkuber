@@ -1,0 +1,44 @@
+---
+import LabelPrimaryTime from "../labels/LabelPrimaryTime.astro";
+import {
+  singleB3,
+  singleB4,
+  singleB5,
+  singleMB,
+  singlePy,
+  singleMg,
+} from "@/data";
+import {
+  IconBld3,
+  IconBld4,
+  IconBld5,
+  IconMbld,
+} from "@/components/icons/blind";
+import { IconPyraminx, IconMegaminx } from "../icons/other";
+import type { Time } from "../../types/time";
+
+const allSinglesWithLabel = [
+  { label: "bld3", icon: IconBld3, data: (singleB3 as Time[])[0] },
+  { label: "bld4", icon: IconBld4, data: (singleB4 as Time[])[0] },
+  { label: "bld5", icon: IconBld5, data: (singleB5 as Time[])[0] },
+  { label: "mbld", icon: IconMbld, data: (singleMB as Time[])[0] },
+  { label: "pyra", icon: IconPyraminx, data: (singlePy as Time[])[0] },
+  { label: "mega", icon: IconMegaminx, data: (singleMg as Time[])[0] },
+];
+---
+
+<div class="grid grid-cols-2 gap-x-6 gap-y-6 justify-items-start items-start">
+  {
+    allSinglesWithLabel.map(({ label, icon, data }) => (
+      <div class="w-[280px]">
+        <LabelPrimaryTime
+          time={data.time}
+          date={data.date}
+          youtube={data.youtube}
+          wca={data.wca}
+          Icon={icon}
+        />
+      </div>
+    ))
+  }
+</div>

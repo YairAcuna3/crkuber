@@ -1,0 +1,36 @@
+---
+import LabelPrimaryTime from "../labels/LabelPrimaryTime.astro";
+import { singleSk, singleSq, singleOH, singleFmc, singleCl } from "@/data";
+import {
+  IconClock,
+  IconFMC,
+  IconOH,
+  IconSkewb,
+  IconSquare1,
+} from "@/components/icons/other";
+import type { Time } from "../../types/time";
+
+const allSinglesWithLabel = [
+  { label: "skewb", icon: IconSkewb, data: (singleSk as Time[])[0] },
+  { label: "square-1", icon: IconSquare1, data: (singleSq as Time[])[0] },
+  { label: "oh", icon: IconOH, data: (singleOH as Time[])[0] },
+  { label: "fmc", icon: IconFMC, data: (singleFmc as Time[])[0] },
+  { label: "clock", icon: IconClock, data: (singleCl as Time[])[0] },
+];
+---
+
+<div class="grid grid-cols-2 gap-x-6 gap-y-6 justify-items-start items-start">
+  {
+    allSinglesWithLabel.map(({ label, icon, data }) => (
+      <div class="w-[280px]">
+        <LabelPrimaryTime
+          time={data.time}
+          date={data.date}
+          youtube={data.youtube}
+          wca={data.wca}
+          Icon={icon}
+        />
+      </div>
+    ))
+  }
+</div>

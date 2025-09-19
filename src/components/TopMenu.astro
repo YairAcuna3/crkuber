@@ -1,0 +1,89 @@
+---
+import IconYoutube from "../components/icons/IconYoutube.astro";
+import {
+  Icon2,
+  Icon3,
+  Icon4,
+  Icon5,
+  Icon6,
+  Icon7,
+} from "@/components/icons/nxn";
+import {
+  IconBld3,
+  IconBld4,
+  IconBld5,
+  IconMbld,
+} from "@/components/icons/blind";
+import {
+  IconMegaminx,
+  IconPyraminx,
+  IconClock,
+  IconFMC,
+  IconOH,
+  IconSkewb,
+  IconSquare1,
+} from "@/components/icons/other";
+import TopMenuBtn from "./TopMenuBtn.astro";
+import IconWCA from "./icons/IconWCA.astro";
+import type { IconOption } from "@/types/icon";
+import IconCrK from "./icons/IconCrK.astro";
+
+const nxnIcons = [
+  { Icon: Icon2, url: "/2x2" },
+  { Icon: Icon3, url: "/3x3" },
+  { Icon: Icon4, url: "/4x4" },
+  { Icon: Icon5, url: "/5x5" },
+  { Icon: Icon6, url: "/6x6" },
+  { Icon: Icon7, url: "/7x7" },
+] as IconOption[];
+
+const blindIcons = [
+  { Icon: IconBld3, url: "/3bld" },
+  { Icon: IconBld4, url: "/4bld" },
+  { Icon: IconBld5, url: "/5bld" },
+  { Icon: IconMbld, url: "/mbld" },
+] as IconOption[];
+
+const otherIcons = [
+  { Icon: IconOH, url: "/oh" },
+  { Icon: IconPyraminx, url: "/pyra" },
+  { Icon: IconMegaminx, url: "/mega" },
+  { Icon: IconSkewb, url: "/skewb" },
+  { Icon: IconSquare1, url: "/sq1" },
+  { Icon: IconFMC, url: "/fmc" },
+  { Icon: IconClock, url: "/clock" },
+] as IconOption[];
+---
+
+<navbar
+  class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-60 bg-primary-950/25 border-b-1 border-primary-300/50 backdrop-blur-md"
+>
+  <a href="/" class="italic text-xl flex items-center gap-2">
+    <IconCrK size={35} lightColor="white" />
+    CrKuber
+  </a>
+  <ul class="flex gap-4 relative">
+    <TopMenuBtn title="N x N" icons={nxnIcons} />
+    <TopMenuBtn
+      title="Blindfold"
+      icons={blindIcons}
+      cols="grid-cols-2"
+      width="w-[200px]"
+    />
+    <TopMenuBtn title="Others" icons={otherIcons} height="h-[260px]" />
+  </ul>
+  <div class="flex gap-6">
+    <IconYoutube
+      size={30}
+      href="https://www.youtube.com/@crkuber5322"
+      target="_blank"
+      isDark={true}
+    />
+    <IconWCA
+      size={30}
+      href="https://www.worldcubeassociation.org"
+      target="_blank"
+      isDark={true}
+    />
+  </div>
+</navbar>
