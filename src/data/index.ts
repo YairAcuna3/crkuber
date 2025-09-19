@@ -76,11 +76,11 @@ export { default as avg5Sq } from "@/data/sq1/avgs5.json";
 export { default as avg12Sq } from "@/data/sq1/avgs12.json";
 export { default as avg100Sq } from "@/data/sq1/avgs100.json";
 
-export { default as singleSk } from "@/data/Skewb/singles.json";
-export { default as avg3Sk } from "@/data/Skewb/avgs3.json";
-export { default as avg5Sk } from "@/data/Skewb/avgs5.json";
-export { default as avg12Sk } from "@/data/Skewb/avgs12.json";
-export { default as avg100Sk } from "@/data/Skewb/avgs100.json";
+export { default as singleSk } from "@/data/skewb/singles.json";
+export { default as avg3Sk } from "@/data/skewb/avgs3.json";
+export { default as avg5Sk } from "@/data/skewb/avgs5.json";
+export { default as avg12Sk } from "@/data/skewb/avgs12.json";
+export { default as avg100Sk } from "@/data/skewb/avgs100.json";
 
 export { default as singlePy } from "@/data/pyra/singles.json";
 export { default as avg3Py } from "@/data/pyra/avgs3.json";
