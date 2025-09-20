@@ -22,7 +22,7 @@ const allSinglesWithLabel = [
 <div class="grid grid-cols-2 gap-x-6 gap-y-6 justify-items-start items-start">
   {
     allSinglesWithLabel.map(({ label, icon, data }) => (
-      <div class="w-[280px]">
+      <div class="w-[280px] transform transition-transform duration-300 hover:scale-105">
         <LabelPrimaryTime
           time={data.time}
           date={data.date}

@@ -7,20 +7,29 @@ import BestPanel1 from "../components/main/BestPanel1.astro";
 import BestPanel2 from "../components/main/BestPanel2.astro";
 import BestPanel3 from "@/components/main/BestPanel3.astro";
 import { Icon3 } from "@/components/icons/nxn";
+import Sparks from "@/components/Sparks.astro";
 ---
 
 <Layout>
   <div class="flex flex-col justify-center w-full">
     <div class="flex justify-center gap-32 w-full">
       <div class="flex flex-col items-center">
-        <div class="h-140 w-140 mt-20">
+        <div
+          class="h-140 w-140 mt-20 animate-float relative flex justify-center"
+        >
           <Image
             src={yoImg}
             alt="Imagen mía"
             format="png"
-            class="rounded-[140px]"
+            class="rounded-[140px] relative z-10"
           />
+          <div
+            class="absolute top-0 h-100 w-100 mt-50 rounded-[280px] bg-radial from-primary-200 to-transparent opacity-50 blur-2xl"
+          >
+          </div>
+          <Sparks />
         </div>
+
         <a
           href="https://www.youtube.com/@crkuber5322"
           target="_blank"
@@ -29,7 +38,7 @@ import { Icon3 } from "@/components/icons/nxn";
           <IconYoutube size={30} lightColor="var(--color-primary-400)" />
           <p class="italic text-primary-400 font-thin text-2xl">@crkuber5322</p>
         </a>
-        <div class="flex gap-2 items-center">
+        <div class="flex gap-2 items-center animate-pulse">
           <p class="text-primary-600 text-xl italic">Main: 8.23s</p>
           <Icon3 size={20} lightColor="var(--color-primary-600)" />
         </div>
@@ -39,7 +48,7 @@ import { Icon3 } from "@/components/icons/nxn";
       </div>
     </div>
 
-    <div class="flex justify-center p-20 gap-32">
+    <div class="flex flex-col xl:flex-row justify-center p-20 gap-32">
       <BestPanel2 />
       <BestPanel3 />
     </div>
