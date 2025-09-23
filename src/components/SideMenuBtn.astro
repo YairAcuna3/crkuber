@@ -1,0 +1,53 @@
+---
+import type { IconOption } from "@/types/icon";
+
+interface Props {
+  title: string;
+  idDiv: string;
+  idBtn: string;
+  icons: IconOption[];
+  cols?: string;
+}
+
+const { title, idDiv, idBtn, icons } = Astro.props as Props;
+---
+
+<li class="flex flex-col">
+  <button
+    id={idBtn}
+    class="transform transition-transform duration-300 group-hover:scale-108 text-white group-hover:text-primary-300"
+  >
+    <p class="text-xl">
+      {title} ▾
+    </p>
+  </button>
+
+  <div id={idDiv} class="hidden transition-opacity duration-300 opacity-0">
+    <div
+      class=`grid grid-cols-2 gap-y-4 py-4 place-items-center border-primary-300 rounded-xl`
+    >
+      {
+        icons.map(({ Icon, url }) => (
+          <a
+            href={url}
+            class="transform transition-transform duration-300 hover:scale-115"
+          >
+            <Icon size={65} lightColor="var(--color-primary-400)" />
+          </a>
+        ))
+      }
+    </div>
+  </div>
+</li>
+
+<script define:vars={{ idBtn, idDiv }}>
+  const btn = document.getElementById(idBtn);
+  const div = document.getElementById(idDiv);
+
+  btn?.addEventListener("click", () => {
+    div?.classList.toggle("opacity-100");
+    setTimeout(() => {
+      div?.classList.toggle("hidden");
+    }, 200);
+  });
+</script>

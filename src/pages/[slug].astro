@@ -211,9 +211,9 @@ const timeData = times[slug];
 ---
 
 <Layout>
-  <main class="flex flex-col items-center w-full">
+  <main class="flex flex-col items-center w-full mb-10">
     <h1 class="text-primary-300 text-3xl font-bold">{category.title}</h1>
-    <p class="text-primary-800 text-lg">{category.description}</p>
+    <p class="text-primary-800 text-lg px-15">{category.description}</p>
 
     <div
       class="mt-6 mb-10 mx-12 transform transition-transform duration-300 hover:scale-105 hover:rotate-1"
@@ -225,7 +225,9 @@ const timeData = times[slug];
       />
     </div>
 
-    <div class="flex gap-6">
+    <div
+      class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6"
+    >
       {
         timeData.map((typeSet) => (
           <div class="w-[280px] transform transition-transform duration-300 hover:scale-105">

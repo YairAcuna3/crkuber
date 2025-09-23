@@ -21,8 +21,8 @@ const { time, date, youtube, wca, Icon } = Astro.props as Props;
   }
 
   <p class="text-xl">Single</p>
-  <p class="text-6xl font-bold">{time}</p>
-  <p>{date}</p>
+  <p class="text-2xl sm:text-6xl lg:text-4xl xl:text-6xl font-bold">{time}</p>
+  <p class="mb-6 sm:mb-0 lg:mb-4 xl:mb-0">{date}</p>
 
   <div class="absolute bottom-3 right-5">
     <IconYoutube size={30} lightColor="white" href={youtube} target="_blank" />

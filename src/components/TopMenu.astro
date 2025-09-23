@@ -27,6 +27,8 @@ import TopMenuBtn from "./TopMenuBtn.astro";
 import IconWCA from "./icons/IconWCA.astro";
 import type { IconOption } from "@/types/icon";
 import IconCrK from "./icons/IconCrK.astro";
+import IconMenu from "./icons/IconMenu.astro";
+import SideMenuBtn from "./SideMenuBtn.astro";
 
 const nxnIcons = [
   { Icon: Icon2, url: "/2x2" },
@@ -55,35 +57,107 @@ const otherIcons = [
 ] as IconOption[];
 ---
 
-<navbar
-  class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center py-4 px-60 bg-primary-950/25 border-b-1 border-primary-300/50 backdrop-blur-md"
+<nav
+  class="fixed top-0 left-0 right-0 z-50 flex justify-between items-center
+         py-4 px-5 md:px-20 lg:px-30 xl:px-60
+         bg-primary-950/25 border-b border-primary-300/50
+         backdrop-blur-md"
 >
-  <a href="/" class="italic text-xl flex items-center gap-2">
-    <IconCrK size={35} lightColor="white" />
-    CrKuber
-  </a>
-  <ul class="flex gap-4 relative">
-    <TopMenuBtn title="N x N" icons={nxnIcons} />
-    <TopMenuBtn
-      title="Blindfold"
-      icons={blindIcons}
-      cols="grid-cols-2"
-      width="w-[200px]"
-    />
-    <TopMenuBtn title="Others" icons={otherIcons} height="h-[260px]" />
-  </ul>
-  <div class="flex gap-6">
-    <IconYoutube
-      size={30}
-      href="https://www.youtube.com/@crkuber5322"
-      target="_blank"
-      isDark={true}
-    />
-    <IconWCA
-      size={30}
-      href="https://www.worldcubeassociation.org"
-      target="_blank"
-      isDark={true}
-    />
+  <button class="btnMenu block md:hidden">
+    <IconMenu size={35} />
+  </button>
+
+  <div
+    id="divMenu"
+    class="fixed inset-0 overflow-y-scroll min-h-screen w-full bg-black/90 backdrop-blur-sm opacity-0 invisible transition-opacity duration-300"
+  >
+    <div class="w-[220px] min-h-screen bg-primary-950/90 dark:bg-gray-900 p-6">
+      <div class="flex justify-between items-center mb-6">
+        <div class="btnMenu">
+          <IconMenu size={35} />
+        </div>
+        <a href="/" class="italic text-xl flex items-center gap-2">
+          <IconCrK size={40} lightColor="white" />
+          CrKuber
+        </a>
+      </div>
+      <ul class="flex flex-col gap-4 py-8">
+        <SideMenuBtn
+          title="N x N"
+          icons={nxnIcons}
+          cols="grid-cols-1"
+          idBtn="btn1"
+          idDiv="div1"
+        />
+        <SideMenuBtn
+          title="Blindfold"
+          icons={blindIcons}
+          cols="grid-cols-1"
+          idBtn="btn2"
+          idDiv="div2"
+        />
+        <SideMenuBtn
+          title="Others"
+          icons={otherIcons}
+          idBtn="btn3"
+          idDiv="div3"
+        />
+      </ul>
+      <div class="flex justify-center mb-6 gap-6 mt-6">
+        <IconYoutube
+          size={45}
+          href="https://www.youtube.com/@crkuber5322"
+          target="_blank"
+          isDark={true}
+        />
+        <IconWCA
+          size={45}
+          href="https://www.worldcubeassociation.org"
+          target="_blank"
+          isDark={true}
+        />
+      </div>
+    </div>
   </div>
-</navbar>
+
+  <div class="hidden md:flex justify-between items-center w-full gap-8">
+    <a href="/" class="italic text-xl flex items-center gap-2">
+      <IconCrK size={35} lightColor="white" />
+      CrKuber
+    </a>
+
+    <ul class="flex gap-4 relative">
+      <TopMenuBtn title="N x N" icons={nxnIcons} />
+      <TopMenuBtn
+        title="Blindfold"
+        icons={blindIcons}
+        cols="grid-cols-2"
+        width="w-[200px]"
+      />
+      <TopMenuBtn title="Others" icons={otherIcons} height="h-[260px]" />
+    </ul>
+
+    <div class="flex gap-6">
+      <IconYoutube
+        size={30}
+        href="https://www.youtube.com/@crkuber5322"
+        target="_blank"
+        isDark={true}
+      />
+      <IconWCA
+        size={30}
+        href="https://www.worldcubeassociation.org"
+        target="_blank"
+        isDark={true}
+      />
+    </div>
+  </div>
+</nav>
+
+<script>
+  import { initMobileMenu } from "@/scripts/menu";
+
+  document.addEventListener("DOMContentLoaded", () => {
+    initMobileMenu();
+  });
+</script>

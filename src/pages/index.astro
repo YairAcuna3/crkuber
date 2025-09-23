@@ -12,10 +12,12 @@ import Sparks from "@/components/Sparks.astro";
 
 <Layout>
   <div class="flex flex-col justify-center w-full">
-    <div class="flex justify-center gap-32 w-full">
+    <div
+      class="flex flex-col lg:flex-row justify-center gap-12 lg:gap-10 xl:gap-20 2xl:gap-32 w-full"
+    >
       <div class="flex flex-col items-center">
         <div
-          class="h-140 w-140 mt-20 animate-float relative flex justify-center"
+          class="h-100 w-100 sm:h-140 sm:w-140 lg:w-120 lg:h-120 xl:w-140 xl:h-140 mt-4 lg:mt-30 xl:mt-20 animate-float relative flex justify-center"
         >
           <Image
             src={yoImg}
@@ -24,7 +26,7 @@ import Sparks from "@/components/Sparks.astro";
             class="rounded-[140px] relative z-10"
           />
           <div
-            class="absolute top-0 h-100 w-100 mt-50 rounded-[280px] bg-radial from-primary-200 to-transparent opacity-50 blur-2xl"
+            class="absolute top-0 h-80 w-80 sm:h-100 sm:w-100 mt-26 sm:mt-50 lg:mt-30 xl:mt-50 rounded-[280px] bg-radial from-primary-200 to-transparent opacity-50 blur-2xl"
           >
           </div>
           <Sparks />
@@ -43,12 +45,14 @@ import Sparks from "@/components/Sparks.astro";
           <Icon3 size={20} lightColor="var(--color-primary-600)" />
         </div>
       </div>
-      <div>
+      <div class="flex justify-center">
         <BestPanel1 />
       </div>
     </div>
 
-    <div class="flex flex-col xl:flex-row justify-center p-20 gap-32">
+    <div
+      class="flex flex-col lg:flex-row justify-center items-center py-10 lg:py-20 gap-10 lg:gap-25 xl:gap-15 2xl:gap-25"
+    >
       <BestPanel2 />
       <BestPanel3 />
     </div>
